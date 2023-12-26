@@ -1,0 +1,25 @@
+[workspace]
+resolver = "2" # Resolver version (keep it 2)
+members = [
+    # Low level math functions
+    "l2math",
+    # Trigonometric abstractions
+    "libtrig",
+    # Macros used to simplify code
+    "macros",
+]
+
+[workspace.package]
+# Contributors of team Draniki may add their name bellow
+authors = [
+    "Матвей Т <https://matveit.dev> AtomicGamer9523@github"
+]
+# Github Repository
+repository = "https://github.com/DranikiRobotics/librobomath"
+# Rust edition (keep it 2021)
+edition = "2021"
+# License of the entire workspace
+license = "BSD-2-Clause"
+
+# Version of the entire workspace
+version = "0.0.1-dev"

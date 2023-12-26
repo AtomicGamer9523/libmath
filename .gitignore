@@ -1,0 +1,16 @@
+# IDE Files
+*.code-workspace
+.vscode
+.idea
+
+# Lock files
+*.lock
+
+# Compiled source
+target
+
+# Compiled Item
+*.dylib
+*.dll
+*.lib
+*.so
