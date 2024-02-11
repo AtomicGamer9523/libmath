@@ -1,28 +1,6 @@
 use crate::TokenStream;
 
-/// Simplifies the creation of FFI functions
-///
-/// # Example
-/// ```rust,ignore,no_run
-/// #[macros::ffi(type = "system")]
-/// pub fn Java_Main_greet<'a>(
-///     mut env: JNIEnv<'a>, _class: JClass<'a>, input: JString<'a>
-/// ) -> jstring {
-///     // First, we have to get the string out of Java. Check out the `strings`
-///     // module for more info on how this works.
-///     let input: String = env.get_string(&input).expect("Couldn't get java string!").into();
-///
-///     // Then we have to create a new Java string to return. Again, more info
-///     // in the `strings` module.
-///     let output = env.new_string(
-///         format!("Hello, {}!", input)
-///     ).expect("Couldn't create java string!");
-///
-///     // Finally, extract the raw pointer to return.
-///     output.into_raw()
-/// }
-/// ```
-pub fn ffi<T: Into<TokenStream>>(cfg: T, input: T) -> TokenStream {
+pub(crate) fn ffi<T: Into<TokenStream>>(cfg: T, input: T) -> TokenStream {
     let settings = parse_settings(cfg.into());
     let res = parse_func(input.into(), settings.2).to_string();
     let res = res.replace("__FFI_RAW_MODIFIERS__", &settings.0);

@@ -1,6 +1,6 @@
-# LibRoboMath
+# LibMath
 
-Math for Robots
+Math for embedded rust (and C) projects.
 
 ## Features
 

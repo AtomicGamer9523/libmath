@@ -1,9 +1,7 @@
 use crate::TokenStream;
 use quote::quote;
 
-/// A macro for changing the Signature of a function.
-/// depending on feature flags.
-pub fn func_mod<T: Into<TokenStream>>(cfg: T, input: T) -> TokenStream {
+pub(crate) fn func_mod<T: Into<TokenStream>>(cfg: T, input: T) -> TokenStream {
     let input = input.into();
     let f = match syn::parse2::<syn::ItemFn>(input) {
         Err(e) => return e.to_compile_error().into(),

@@ -2,7 +2,7 @@
 ///
 /// Input generally looks like this:
 ///
-/// ```rust,ignore,no_run
+/// ```rust
 /// $NAME = @RM SomeStruct
 /// ```
 ///
@@ -58,13 +58,13 @@ impl std::fmt::Debug for TypeVariant {
 impl syn::parse::Parse for TypeVariant {
     /// Turns this:
     ///
-    /// ```rust,ignore,no_run
+    /// ```rust
     /// $NAME = @RM SomeStruct,
     /// ```
     ///
     /// Into this:
     ///
-    /// ```rust,ignore,no_run
+    /// ```rust
     /// TypeVariant {
     ///    alias: "NAME"
     ///    ty: SomeStruct,
