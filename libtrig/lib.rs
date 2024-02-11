@@ -1,7 +1,7 @@
 #![no_std]
 #![cfg_attr(feature = "unstable", feature(const_fn_floating_point_arithmetic))]
 #![cfg_attr(feature = "unstable", feature(const_mut_refs))]
-#![cfg_attr(feature = "unstable", feature(const_mut_refs))]
+#![cfg_attr(feature = "unstable", allow(internal_features))]
 #![warn(missing_docs, unused, clippy::all, unsafe_code)]
 #![deny(missing_debug_implementations)]
 #![doc = include_str!("./README.md")]
