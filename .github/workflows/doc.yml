@@ -21,7 +21,7 @@ jobs:
           toolchain: nightly
 
       - name: Generate docs
-        run: cargo +nightly doc --no-deps -p l2math -p libtrig
+        run: cargo +nightly doc --no-deps -p l2math -p libtrig --all-features
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.8

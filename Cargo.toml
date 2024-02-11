@@ -7,6 +7,8 @@ members = [
     "libtrig",
     # Macros used to simplify code
     "macros",
+    # Stretchy numbers (arbitrary precision)
+    "rubbernum",
 ]
 
 [workspace.package]
