@@ -18,6 +18,7 @@ jobs:
         uses: actions-rs/toolchain@v1
         with:
           profile: minimal
+          toolchain: nightly
 
       - name: Generate docs
         run: cargo +nightly doc --no-deps -p l2math -p libtrig
